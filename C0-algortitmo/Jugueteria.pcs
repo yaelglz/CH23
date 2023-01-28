@@ -1,0 +1,115 @@
+Algoritmo Jugueteria
+	Definir  Sal_diario, años_lab, dias_vaca, prima_dom, bono, extra, impuesto, pre_muñe, pre_paya, peso_muñe, peso_paya, peso_maximo, descuento Como Real
+	Definir Selec Como Caracter
+	Sal_diario <- 428;
+	dias_vaca <-7;
+	prima_dom <-.71;
+	impuesto <-.88;
+	extra<-80;
+	bono1 <-.15;
+	pre_muñe <- 159;
+	pre_paya <- 220;
+	peso_muñe <- 200;
+	peso_paya <- 135;
+	peso_maximo <- 2000;
+	descuento <- .90;
+	
+	Escribir "Escribe (pago) o (productos) segun tu consula";
+	Leer Selec
+	Si Selec == "pago" Entonces
+		
+		Escribir "Ingresa el numero de dias trabajados:";
+		Leer dias_traba;
+		
+		Escribir  "Ingresa el numero de años laborados:"
+		Leer años_lab;
+		
+		Escribir "Trabajo en domingo(si/no):";
+		Leer selec2;
+		
+		Escribir "¿Trabajo horas extras(si/no)?:"
+		Leer selec3;
+		
+		suel_total<- dias_traba*Sal_diario;
+		
+		Si años_lab >= 1 Entonces
+			dias_vaca <- años_lab*7
+		Sino 
+			dias_vaca<-0
+			
+		Fin Si
+		
+		Si selec2 == "si" Entonces
+			Escribir "Ingresa el numero de domingos trabajados:";
+			Leer num_dom;
+			prima_dom<- num_dom*(Sal_diario*prima_dom);
+		SiNo
+			prima_dom<- 0
+		Fin Si
+		
+		Si selec3 == "si" Entonces
+			Escribir "Ingresa en numero de horas extra:";
+			Leer hora_extra;
+			extra<-hora_extra*extra
+		SiNo
+			extra<-0
+		Fin Si
+		
+		total1<-suel_total+prima_dom+extra;
+		
+		total2<-(suel_total+prima_dom+extra)*impuesto;
+		
+		Si dias_traba >= 28 Entonces
+			b5<-total2*bono1;
+		SiNo
+			b5<-0;
+		Fin Si
+		
+		total3<-total1+b5;
+		total4<-total2+b5;
+		
+		Escribir "El sueldo base es: ", suel_total;
+		Escribir "Dias de vacaciones: ", dias_vaca;
+		Escribir "El monto correspondiente a prima dominical es: ", prima_dom;
+		Escribir "El monto correspondiente a horas extras es: ", extra;
+		Escribir "Tu bono de productividad es de: ", b5;
+		Escribir "Tu sueldo total antes de impuestos es de: ", total3;
+		Escribir "Tu sueldo total despues de impuestos es de: ", total4;
+		
+	SiNo
+		Escribir "Ingresa el numero total de muñecas:";
+		Leer muñe;
+		Escribir "Ingresa el total de Payasos:";
+		Leer paya;
+		
+		tm<-(muñe*pre_muñe);
+		tp<-(paya*pre_paya);
+		t1<-tm+tp;
+		t2<-(muñe+peso_muñe)+(paya*peso_paya);
+		
+		Si t2 >= peso_maximo Entonces
+			paquetes<-t2/peso_maximo
+			paquetes<-redon(paquetes+0.4)
+		SiNo
+			paquetes<-1;
+		Fin Si
+		
+		
+		Escribir "El precio total de muñecas es : ", tm;
+		Escribir "El precio total de payasos es : ", tp;
+		Escribir "El precio por ambos es : ",t1;
+		Escribir "Peso total del pedido: ", t2, " gramos";
+		Escribir "El total de paquetes a enviar es : ", paquetes;
+		
+		Si t2 >= 4000 Entonces
+			descuento<-t1*descuento;
+			Escribir "El pedido es candidato a 10% de descuento";
+			Escribir "El total con descuento es: ", descuento;
+		SiNo
+			descuento<-0
+		Fin Si
+		
+	Fin Si
+	
+	
+FinAlgoritmo
