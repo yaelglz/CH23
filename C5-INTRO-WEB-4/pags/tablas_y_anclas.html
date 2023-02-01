@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/tablas_y_anclas.css" />
+    <title>Tablas y anclas</title>
+</head>
+
+<body>
+    <h1>Tablas</h1>
+    <!--Las tablas son un conjunto estructurado de datos compuesto por filas y columnas-->
+
+    <caption>
+        Tabla de nombres
+    </caption>
+    <!--Representa unt titulo descriptivo en una tabla-->
+
+    <table>
+        <!--Crea el elemento tabla-->
+        <tr>
+            <!--Crea una fila en una tabla-->
+            <th>Nombre</th>
+            <!--Crea una celda de encabezado en una tabla-->
+            <th>Apellido</th>
+        </tr>
+        <tr>
+            <td>Yael</td>
+            <!--Crea una celda en una tabla-->
+            <td>Gonzalez</td>
+        </tr>
+        <tr>
+            <td>Nictes</td>
+            <td>Slys</td>
+        </tr>
+    </table>
+    <br />
+    <table>
+        <p>Tabla simple con encabezado</p>
+        <!--Representa un parrafo de descrpcion-->
+        <thead>
+            <!--esta etiqueta agrupa los elementos de la cabecera en la tabla.-->
+            <tr>
+                <th colspan="2">Encabezado de tablas</th>
+                <!--permite expandir las celdas de datos o de encabezados al número de columnas que deseemos que ocupe-->
+            </tr>
+        </thead>
+        <tbody>
+            <!--esta etiqueta agrupa los elementos de contenido en la tabla.-->
+            <tr>
+                <td>El cuerpo de la tabla</td>
+                <td>con 2 columnas</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <caption>
+        Tabla de nombres
+    </caption>
+    <!--representa un título descriptivo en una tabla.-->
+
+    <p>Tabla con thead, tfoot, y tbody</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Header content 1</th>
+                <th>Header content 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Body content 1</td>
+                <td>Body content 2</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <!--esta etiqueta agrupa los elementos de pie en la tabla.-->
+            <tr>
+                <td>Footer content 1</td>
+                <td>Footer content 2</td>
+            </tr>
+        </tfoot>
+    </table>
+    <p>Table with colgroup</p>
+    <table>
+        <colgroup span="4"></colgroup>
+        <!--Para aplicar una propiedad a más de una columna no es necesario repetir la propiedad en cada elemento <col>. Lo más sencillo es aplicarle el atributo span al primer elemento <col>. Este atributo funciona igual que rowspan y colspan, es decir, nos permite expandir la influencia de <col> al número de columnas que queramos.-->
+        <tr>
+            <th>Countries</th>
+            <th>Capitals</th>
+            <th>Population</th>
+            <th>Language</th>
+        </tr>
+        <tr>
+            <td>USA</td>
+            <td>Washington, D.C.</td>
+            <td>309 million</td>
+            <td>English</td>
+        </tr>
+        <tr>
+            <td>Sweden</td>
+            <td>Stockholm</td>
+            <td>9 million</td>
+            <td>Swedish</td>
+        </tr>
+    </table>
+    <col style=«background-color:black» span=«2»>
+    <p>Table with colgroup and col</p>
+    <table>
+        <colgroup>
+            <!--El elemento <col> se especifica dentro de un bloque <colgroup>, justo debajo de la apertura <table>.-->
+
+            <col style="background-color: #0f0" />
+            <!--Este elemento nos permite especificar propiedades de estilo para toda una columna. Sin este elemento tendríamos que especificar el estilo en cada celda <th> o <td> de la columna que queramos estilizar. -->
+
+            <col span="2" />
+
+        </colgroup>
+        <tr>
+            <th>Lima</th>
+            <th>Limon</th>
+            <th>Naranja</th>
+        </tr>
+        <tr>
+            <td>Green</td>
+            <td>Yellow</td>
+            <td>Orange</td>
+        </tr>
+    </table>
+
+    <p>Cuadro sencillo con leyenda(caption)</p>
+    <table>
+        <caption>
+            Subtítulo impresionante
+        </caption>
+        <tr>
+            <td>Dato Impresionante</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <p>Super</p>
+    <table>
+        <colgroup span="4"></colgroup>
+        <tr>
+            <th>N° items</th>
+            <th>Prducto</th>
+            <th>Precio unitario</th>
+            <th>Precio total</th>
+        </tr>
+        <tr>
+            <td colspan="4"><center>Frutas</center></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Platanao</td>
+            <td>$13</td>
+            <td>$13</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Manzana</td>
+            <td>$40</td>
+            <td>$80</td>
+        </tr>
+        <tr>
+            <td colspan="4"><center>Verduras</center></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Calabaza</td>
+            <td>$16</td>
+            <td>$16</td>
+        </tr>
+        <tr>
+            <td>.5</td>
+            <td>Chayote</td>
+            <td>$14</td>
+            <td>$7</td>
+        </tr>
+        <tr>
+            <td colspan="4"><center>Lacteos</center></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Leche</td>
+            <td>$20</td>
+            <td>$60</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Crema</td>
+            <td>$25</td>
+            <td>$25</td>
+        </tr>
+        <tr>
+            <td colspan="4"><center>Carnes</center></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Pollo</td>
+            <td>$45</td>
+            <td>$45</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Carne de res</td>
+            <td>$80</td>
+            <td>$80</td>
+        </tr>
+        <tr>
+            <td colspan="4"><center>Perros</center></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Croquetas</td>
+            <td>$50</td>
+            <td>$50</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Premios</td>
+            <td>$30</td>
+            <td>$30</td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td colspan="3">Total</td>
+                <td>$406</td>
+            </tr>
+        </tfoot>
+
+</body>
+
+</html>
