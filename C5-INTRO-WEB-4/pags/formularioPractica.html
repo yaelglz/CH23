@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <form>
+        <h4>Formulario para viajar</h4>
+        <p>Nombre:</p>
+        <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
+        <br>
+        <p>Apellido:</p>
+        <input type="text" name="apellido" placeholder="Escribe tu apellido" required>
+        <br>
+        <p>Fecha de nacimiento:</p>
+        <input type="date" name="birthday">
+        <br>
+        <p>Correo electrónico:</p>
+        <input type="email" name="email" placeholder="Escribe tu correo electrónico" required>
+        <br>
+        <p>Teléfono:</p>
+        <input type="tel" name="phone" placeholder="Escribe tu número de teléfono" required>
+        <br>
+            <p>Genero:</p>
+            <br>
+            <input type="radio" name="gender" value="male" checked> Hombre<br>
+            <input type="radio" name="gender" value="female"> Mujer<br>
+            <input type="radio" name="gender" value="other"> Otro
+        <br>
+        <p>País de destino:</p>
+        <select name="pais" required>
+            <option value="mexico">México</option>
+            <option value="usa">Estados Unidos</option>
+            <option value="canada">Canadá</option>
+            <option value="francia">Francia</option>
+            <option value="italia">Italia</option>
+            <option value="japon">Japón</option>
+            <option value="china">China</option>
+            <option value="corea">Corea</option>
+            <option value="alemania">Alemania</option>
+            <option value="españa">España</option>
+        </select>
+        <br>
+        <br>
+        <p>Notas extras</p>
+        <textarea id="msg" name="user_message"></textarea>
+        <br>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <style>
+        form {
+            /* Centrar el formulario en la página */
+            margin: 0 auto;
+            width: 400px;
+            /* Esquema del formulario */
+            padding: 1em;
+            border: 1px solid #CCC;
+            border-radius: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        form li+li {
+            margin-top: 1em;
+        }
+
+        label {
+            /* Tamaño y alineación uniforme */
+            display: inline-block;
+            width: 90px;
+            text-align: right;
+        }
+
+        input,
+        textarea {
+            /* Para asegurarse de que todos los campos de texto tienen la misma configuración de letra
+             Por defecto, las áreas de texto tienen un tipo de letra monoespaciada */
+            font: 1em sans-serif;
+
+            /* Tamaño uniforme del campo de texto */
+            width: 300px;
+            box-sizing: border-box;
+
+            /* Hacer coincidir los bordes del campo del formulario */
+            border: 1px solid #999;
+        }
+
+        input:focus,
+        textarea:focus {
+            /* Destacado adicional para elementos que tienen el cursor */
+            border-color: #000;
+        }
+
+        textarea {
+            /* Alinear los campos de texto multilínea con sus etiquetas */
+            vertical-align: top;
+
+            /* Proporcionar espacio para escribir texto */
+            height: 5em;
+        }
+
+        .button {
+            /* Alinear los botones con los campos de texto */
+            padding-left: 90px;
+            /* mismo tamaño que los elementos de la etiqueta */
+        }
+
+        button {
+            /* Este margen adicional representa aproximadamente el mismo espacio que el espacio
+             entre las etiquetas y sus campos de texto */
+            margin-left: .5em;
+        }
+    </style>
+
+</body>
+
+</html>
