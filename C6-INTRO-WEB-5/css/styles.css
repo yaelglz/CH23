@@ -1,60 +1,250 @@
 body {
   font-family: "Open Sans", Arial, Tahoma;
+  /*Cambiar la fuente de la pagina*/
   font-weight: 400;
+  /*Cambiar el grosor de la fuente*/
   font-size: 14px;
+  /*Cambiar el tamaño de la fuente*/
   color: #363636;
+  /*Cambiar el color de la fuente*/
   background-color: #ededed;
+  /*Cambiar el color de fondo*/
 }
 
 /*Header*/
 h1 {
   text-transform: uppercase;
+  /*Cambiar a mayusculas*/
 }
 
 h1 span {
   color: #9b27d9;
+  /*Cambiar el color de la fuente*/
 }
 
 #photo-header {
+  /*Cambiar el estilo del encabezado*/
   text-align: center;
+  /*Centrar el texto*/
   border-bottom-color: #b781d4;
+  /*Cambiar el color de la linea*/
   border-bottom-style: solid;
+  /*Cambiar el estilo de la linea*/
   border-bottom-width: 5px;
+  /*Cambiar el grosor de la linea*/
 }
 
 #photo img {
+  /*Cambiar el estilo de la imagen*/
   background-color: #ededed;
   width: 145px;
+  /*Cambiar el ancho de la imagen*/
   height: 150px;
+  /*Cambiar el alto de la imagen*/
   border-radius: 50%;
+  /*Cambiar el radio de las esquinas*/
 }
 
 .container {
+  /*Cambiar el estilo del contenedor*/
   max-width: 950px;
+  /*Cambiar el ancho maximo del contenedor*/
   background-color: #fff;
   margin-top: 80px;
+  /*Cambiar el margen superior*/
   margin-left: auto;
+  /*Centrar el contenedor*/
   margin-right: auto;
+  /*Centrar el contenedor*/
   margin-bottom: 30px;
+  /*Cambiar el margen inferior*/
 }
 
-.menu ul{
+.menu ul {
+  /*Cambiar el estilo del menu*/
   text-align: center;
+  /*Centrar el texto*/
   margin: auto;
+  /*Centrar el menu*/
   padding: 0%;
+  /*Quitar el padding*/
   list-style-type: none;
+  /*Quitar el estilo*/
 }
 
-.menu ul li{
-  display:inline-block;
+.menu ul li {
+  /*Cambiar el estilo del menu*/
+  display: inline-block;
+  /*Mostrar los elementos en linea*/
   position: relative;
+  /*Posicionar los elementos*/
 }
 
-.menu ul li a{
+.menu ul li a {
+  /*Cambiar el estilo del menu*/
   background-color: #000000;
   color: #ffffff;
-  font-size: 11px;
+  font-size: 10px;
   text-decoration: none;
   display: block;
-  padding: 3px;
+  padding: 6px;
+  /*El padding es el espacio entre el texto y el borde*/
 }
+
+/*Uso de position absolute para que el submenu se despliegue debajo del menu principal*/
+.menu ul li ul {
+  /*Cambiar el estilo del submenu*/
+  position: absolute;
+  /*Posicionar los elementos*/
+  top: 25px;
+  /*Cambiar la posicion superior*/
+  left: 0;
+  /*Cambiar la posicion izquierda*/
+  list-style-type: none;
+  /*Quitar el estilo*/
+  display: none;
+  /*Ocultar el submenu*/
+  height: auto;
+  /*Cambiar el alto*/
+}
+
+.menu ul li:hover ul {
+  /*Cuando el mouse este sobre el elemento, mostrar el submenu*/
+  display: block;
+  /*Mostrar el submenu*/
+}
+
+.menu ul li ul li {
+  /*Cambiar el estilo del submenu*/
+  display: block;
+  /*Mostrar los elementos en linea*/
+  width: 60px;
+  /*Cambiar el ancho*/
+  height: 20px;
+  /*Cambiar el alto*/
+  margin: 0;
+  /*Quitar el margen*/
+  text-align: left;
+  /*Alinear el texto a la izquierda*/
+  font-size: 14px;
+  /*Cambiar el tamaño de la fuente*/
+}
+
+/*Fin del Header*/
+
+h2 {
+  color: #9b27d9;
+  text-transform: uppercase;
+}
+
+h2::before {
+  content: "// ";
+}
+
+.clearfix:before {
+  display: table;
+  line-height: 1;
+  content: "/";
+}
+
+.pull-left {
+  float: left;
+}
+
+.row {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.col-60 {
+  width: 60%;
+}
+
+.col-10 {
+  width: 10%;
+}
+
+.col-90{
+  width: 90%;
+}
+
+/*Path: css\styles.css*/
+
+.education ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.education .year {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.education .description {
+  background: #EEEEEE;
+  border-bottom: 1px solid #DDDDDD;
+  padding: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.education .description h3, .education .description p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.education .description p::after {
+  content: "";
+  position: absolute;
+  border: 8px solid transparent;
+  border-right: 8px solid #EEEEEE;
+  top: 5px;
+  left: -16px;
+}
+
+.contflex{
+  display:flex;
+}
+
+.experience .job .where{
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: justify;
+}
+
+.year{
+  font-size: 0.7em;
+}
+
+.profesion{
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: justify;
+  font-size: 0.9em;
+  margin-left: 0.5em;
+}
+
+.description{
+  margin-top: 0;
+  margin-left: 0.5em;
+  text-align: justify;
+}
+
+.containerskill{
+  width: 100%;
+  background-color: #DDDDDD;
+  }
+
+.skills{
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.html {width: 90%; background-color: #b781d4;}
+.css {width: 80%; background-color: #b781d4;}
+.js {width: 65%; background-color: #b781d4;}
+.python {width: 60%; background-color: #b781d4;}
