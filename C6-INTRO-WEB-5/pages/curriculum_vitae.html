@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <title>Curriculum Vitae :: Yael Gonzalez</title>
 </head>
 
@@ -120,9 +121,9 @@
                                 <h3 class="profesion">JavaScrip</h3>
                                 <p class="description">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    Incidunt eligendi recusandae eius provident ut ea consequuntur
-                                    quos ab minima natus quas officiis cumque dolorem fuga
-                                    repudiandae impedit laudantium, sint quis?
+                                    Incidunt eligendi recusandae eius provident ut ea
+                                    consequuntur quos ab minima natus quas officiis cumque
+                                    dolorem fuga repudiandae impedit laudantium, sint quis?
                                 </p>
                             </div>
                             <div class="pull-left col-10">
@@ -142,8 +143,8 @@
                     </article>
                 </div>
             </div>
-            <div>
-                <div>
+            <div class="col-40 pull-left">
+                <div class="row">
                     <h2>Contacto</h2>
                     <ul>
                         <li><strong>Email:</strong> yaelglzmunoz@gmail.com</li>
@@ -152,18 +153,55 @@
                         <li><strong>Facebook:</strong> Yael Gonzalez</li>
                     </ul>
                     <h2>Skills</h2>
+                    <!--
+                    <ul class="containerskil">
+                        <li class="skills html">html 90%</li>
+                        <li class="skills css">css 80%</li>
+                        <li class="skills js">js 65%</li>
+                        <li class="skills python">python 60%</li>
+                    </ul>
+                    -->
+                    <ul class="skills">
+                        <li class="skills-item" data-percent="90">Java</li>
+                        <li class="skills-item" data-percent="80">HTML</li>
+                        <li class="skills-item" data-percent="60">Css</li>
+                        <li class="skills-item" data-percent="40">Js</li>
+                        <li class="skills-item" data-percent="20">Python</li>
+                    </ul>
+                    <h2>Idiomas</h2>
                     <div>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JS</li>
-                            <li>Python</li>
-                        </ul>
+                        <div>
+                            Ingles
+                            <div class="icon-star">
+                                <div class="icon-star-red" style="width: 72.5%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            Frances
+                            <div class="icon-star">
+                                <div class="icon-star-red" style="width: 10%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            Español
+                            <div class="icon-star">
+                                <div class="icon-star-red" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        <h2>Hobbies</h2>
+                        <span class="hobbies"><i class='fa fa-heartbeat'></i> Lectura</span>
+                        <span class="hobbies"><i class='fa fa-heartbeat'></i> Videojuegos</span>
+                        <span class="hobbies"><i class='fa fa-heartbeat'></i> Musica</span>
                     </div>
                 </div>
-            </div>
         </section>
-        <footer></footer>
+        <footer class=" row col-90">
+            <div class="col-60">
+                <div class="col-100">
+                    <p>Desarrollador Front-End, Genereation 2023</p>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 

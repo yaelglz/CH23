@@ -164,8 +164,12 @@ h2::before {
   width: 10%;
 }
 
-.col-90{
+.col-90 {
   width: 90%;
+}
+
+.col-40 {
+  width: 40%;
 }
 
 /*Path: css\styles.css*/
@@ -182,15 +186,16 @@ h2::before {
 }
 
 .education .description {
-  background: #EEEEEE;
-  border-bottom: 1px solid #DDDDDD;
+  background: #eeeeee;
+  border-bottom: 1px solid #dddddd;
   padding: 10px;
   margin-bottom: 10px;
   position: relative;
   box-sizing: border-box;
 }
 
-.education .description h3, .education .description p {
+.education .description h3,
+.education .description p {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -199,26 +204,26 @@ h2::before {
   content: "";
   position: absolute;
   border: 8px solid transparent;
-  border-right: 8px solid #EEEEEE;
+  border-right: 8px solid #eeeeee;
   top: 5px;
   left: -16px;
 }
 
-.contflex{
-  display:flex;
+.contflex {
+  display: flex;
 }
 
-.experience .job .where{
+.experience .job .where {
   font-size: 1.2em;
   font-weight: bold;
   text-align: justify;
 }
 
-.year{
+.year {
   font-size: 0.7em;
 }
 
-.profesion{
+.profesion {
   margin-top: 0;
   margin-bottom: 0;
   text-align: justify;
@@ -226,25 +231,130 @@ h2::before {
   margin-left: 0.5em;
 }
 
-.description{
+.description {
   margin-top: 0;
   margin-left: 0.5em;
   text-align: justify;
 }
 
-.containerskill{
-  width: 100%;
-  background-color: #DDDDDD;
-  }
-
-.skills{
-  text-align: right;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: white;
+.skills {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.html {width: 90%; background-color: #b781d4;}
-.css {width: 80%; background-color: #b781d4;}
-.js {width: 65%; background-color: #b781d4;}
-.python {width: 60%; background-color: #b781d4;}
+
+.skills-item {
+  color: #FFFFFF;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 2px 0 2px 5px;
+  margin-top: 5px;
+  background: #F0563D;
+}
+
+
+.skills-item[data-percent="10"] {
+  width: 10%
+}
+
+.skills-item[data-percent="20"] {
+  width: 20%
+}
+
+.skills-item[data-percent="30"] {
+  width: 30%
+}
+
+.skills-item[data-percent="40"] {
+  width: 40%
+}
+
+.skills-item[data-percent="50"] {
+  width: 50%
+}
+
+.skills-item[data-percent="60"] {
+  width: 60%
+}
+
+.skills-item[data-percent="70"] {
+  width: 70%
+}
+
+.skills-item[data-percent="80"] {
+  width: 80%
+}
+
+.skills-item[data-percent="90"] {
+  width: 90%
+}
+
+/* .html {
+  color: #DDDDDD;
+  margin: 3px;
+  list-style-type: none;
+  text-align: right;
+  width: 90%;
+  background-color: #04AA6D;
+}
+
+.css {
+  color: #DDDDDD;
+  margin: 3px;
+  list-style-type: none;
+  text-align: right;
+  width: 80%;
+  background-color: #2196F3;
+}
+
+.js {
+  color: #DDDDDD;
+  margin: 3px;
+  list-style-type: none;
+  text-align: right;
+  none;
+  width: 65%;
+  background-color: #f44336;
+}
+
+.python {
+  color: #DDDDDD;
+  margin: 3px;
+  list-style-type: none;
+  text-align: right;
+  width: 60%;
+  background-color: #808080;
+} */
+
+.icon-star {
+  background: url(../img/star-grey.png);
+  height: 14px;
+  width: 110px;
+  float: right;
+}
+
+.icon-star-red {
+  background: url(../img/star-red.png);
+  height: 14px;
+  width: 110px;
+  float: left;
+}
+
+.obj-star {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.hobbies {
+  background: plum;
+  font-size: 1.2em;
+  padding: 8px;
+  margin-left: 10px;
+}
+
+.fotter-p{
+  text-align: right;
+  font-size: 1em;
+}
