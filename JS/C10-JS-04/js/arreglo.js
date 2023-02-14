@@ -1,8 +1,16 @@
 let lista = [12, 5, 80, 34, 7];
+let lNueva = lista.map( // Map es una función que nos permite recorrer un arreglo y aplicar una función a cada uno de sus elementos. En este caso se multiplica cada elemento del arreglo por 2.
+    function (valor) {
+        return valor * 2;
+    }
+)
+console.log(lNueva);
+
+
 lista.sort(
     function (a, b) {
         return a - b; // Ordena de menor a mayor los números de un arreglo de números. Si se quiere ordenar de mayor a menor, se cambia el signo de la resta. Si se quiere ordenar de la A a la Z, se cambia el orden de las variables a y b. Si se quiere ordenar de la Z a la A, se cambia el orden de las variables a y b y se cambia el signo de la resta.
-    } 
+    }
 );
 console.log(lista);
 
