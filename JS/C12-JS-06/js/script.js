@@ -78,4 +78,77 @@ var botonMultiplicacion = document.getElementById("botonMultiplicacion");
 var botonDivision = document.getElementById("botonDivision");
 var resultado = document.getElementById("resultado");
 
-//2. Agregar los eventos a los elementos
+//Construimos las funciones de nuestra calculadora
+function suma() {
+    let valor1 = parseInt(input1.value);// Pido numero1
+    let valor2 = parseInt(input2.value);// Pido numero2
+    let suma = valor1 + valor2;// Sumo los numeros
+    resultado.innerHTML = suma;// Muestro el resultado
+}
+
+function resta() {
+    let valor1 = parseINT(input1.value); //.value es para obtener el valor de un input
+    let valor2 = parseInt(input2.value);
+    let resta = valor1 - valor2;
+    resultado.innerHTML = resta;
+}
+
+function multiplicacion() {
+    let valor1 = parseInt(input1.value);
+    let valor2 = parseInt(input2.value);
+    let multiplicacion = valor1 * valor2;
+    resultado.innerHTML = multiplicacion;
+}
+
+function division() {
+    let valor1 = parseInt(input1.value);
+    let valor2 = parseInt(input2.value);
+    let division = valor1 / valor2;
+    resultado.innerHTML = division;
+}
+
+/*Asignamos las funciones a los eventos (addEventListener)
+    -node.addEventListener("evento a escuchar", funcion a ejecutar)
+        -node (nodo donde se aterriza el evento)
+        -addEventListener (palabra reservada para usar el evento)
+        -evento a escuchar (click, mouseover, mouseout, etc)
+        -funcion a ejecutar (suma, resta, multiplicacion, division)
+*/
+botonSuma.addEventListener("click", suma);
+botonResta.addEventListener("click", resta);
+botonMultiplicacion.addEventListener("click", multiplicacion);
+botonDivision.addEventListener("click", division);
+
+
+/* Manipulacion del DOM
+    -Metodos para acceder a elementos
+        - document.getElementById("id"): (botonSuma)
+        - document.getElementsByTagName("tag"): (<button>)
+        - document.getElementsByClassName("class"): (.btn)
+
+    -Metodos para crear elementos
+        - document.createElement("tipoNodo"): Crea un nodo de tipo elemento
+        - document.createTextNode("texto"): Crea un nodo de tipo texto
+
+    -Metodos para insertar elementos
+        - append(): Inserta un nodo como ultimo hijo de otro nodo
+            (parentElement).append(childElement
+        - appendChild(): Inserta un nodo como ultimo hijo de otro nodo
+        - insertBefore(): Inserta un nodo antes de otro nodo
+        - replaceChild(): Reemplaza un nodo por otro
+
+    -Metodos modificar elementos
+        - innerHTML: Modifica el contenido HTML de un elemento
+            (node).innerHTML = "Nuevo contenido"
+            (node).outerHTML = "Nuevo contenido"
+        - textContent: Modifica el contenido de texto de un elemento
+        - setAttribute(): Modifica el valor de un atributo
+        - removeAttribute(): Elimina un atributo
+*/
+//Primer paso: Definir con que voy a interacturar(almacenar en variables)
+const textoAModificar = document.querySelector("#h1");
+
+//Creo una funcion que cambia el color
+function cambiarColor(color) {
+    textoAModificar.style.color = color;
+}
