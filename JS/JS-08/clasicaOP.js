@@ -7,9 +7,9 @@ class OperacionesAritmeticas { //Declaracion CAMEL CASE, se usa para clases y ob
         this.numero1 = valor1;
     }
 
-sumar() {
-    return this.numero0 + this.numero1;
-}
+    sumar() {
+        return this.numero0 + this.numero1;
+    }
 }
 
 let obj1;

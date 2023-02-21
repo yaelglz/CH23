@@ -1,7 +1,7 @@
 let persona = {
     nombre: 'Yael',
     apellido: 'Gonzalez',
-    nombreCompleto: function(){
+    nombreCompleto: function () {
         return 'El nombre es ' + this.nombre + ' ' + this.apellido;
     }
 }
