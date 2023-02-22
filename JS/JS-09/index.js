@@ -1,6 +1,2 @@
 console.log("Hola desde NPM");
-const parrotSay = require('parrotsay-api')
-
-parrotSay('yaaay')
-    .then(console.log)
-    .catch(console.error)
+//Que es el NPM - Node Package Manager - es un gestor de paquetes para Node.js, nos ayuda a instalar paquetes de terceros y a administrar las dependencias de nuestro proyecto.
