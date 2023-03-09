@@ -1,10 +1,11 @@
 package com.yglz.clases;
 
-public class AlumnoB extends PersonaP{
+public class AlumnoB extends PersonaP {
 	private int matriucula;
 	private double promedio;
 
-	public AlumnoB(int matriucula, double promedio) {
+	public AlumnoB(int matriucula, double promedio, String nombre, int edad) {
+		super(nombre, edad);
 		this.matriucula = matriucula;
 		this.promedio = promedio;
 	}
@@ -29,5 +30,14 @@ public class AlumnoB extends PersonaP{
 	public String toString() {
 		return "AlumnoB [matriucula=" + matriucula + ", promedio=" + promedio + "]";
 	}
+	
+	public void mostrarDatos() {
+		System.out.println(this.getNombre() + " " + this.getEdad() + " " + this.matriucula + " " + this.promedio);
 
+	}
+
+	public void mostrarDatos(String apellido) {
+		System.out.println(this.getNombre() + " " + apellido + " " + this.getEdad() + " " + this.matriucula + " " + this.promedio);
+
+	}
 }
