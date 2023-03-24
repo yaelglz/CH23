@@ -1,0 +1,224 @@
+Ejercicio 1 - Java If-Else
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    private static final Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        int N = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        
+        if (N % 2 != 0) {
+        System.out.println("Weird");
+    } else {
+        if (N >= 2 && N <= 5) {
+            System.out.println("Not Weird");
+        } else if (N >= 6 && N <= 20) {
+            System.out.println("Weird");
+        } else {
+            System.out.println("Not Weird");
+        }
+    }
+        scanner.close();
+    }
+}
+
+
+Ejercicio 2 - Java Loops II
+
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+
+            int sum = a;
+            for (int j = 0; j < n; j++) {
+                sum += Math.pow(2, j) * b;
+                System.out.print(sum + " ");
+            }
+            System.out.println();
+        }
+        in.close();
+    }
+}
+
+
+Ejercicio 3 - Plus Minus
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+class Result {
+
+    public static void plusMinus(List<Integer> arr) {
+        int n = arr.size();
+        int positiveCount = 0;
+        int negativeCount = 0;
+        int zeroCount = 0;
+
+        for (int i = 0; i < n; i++) {
+            int current = arr.get(i);
+            if (current > 0) {
+                positiveCount++;
+            } else if (current < 0) {
+                negativeCount++;
+            } else {
+                zeroCount++;
+            }
+        }
+
+        double positiveRatio = (double) positiveCount / n;
+        double negativeRatio = (double) negativeCount / n;
+        double zeroRatio = (double) zeroCount / n;
+
+        System.out.printf("%.6f\n", positiveRatio);
+        System.out.printf("%.6f\n", negativeRatio);
+        System.out.printf("%.6f\n", zeroRatio);
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
+
+        String[] arrTemp = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+        List<Integer> arr = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            int arrItem = Integer.parseInt(arrTemp[i]);
+            arr.add(arrItem);
+        }
+
+        Result.plusMinus(arr);
+
+        bufferedReader.close();
+    }
+}
+
+
+Ejercicio 4 - Prime Checker
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.lang.reflect.*;
+import static java.lang.System.in;
+class Prime {
+    public void checkPrime(int... array) {
+        for (int a : array) {
+            if (isPrime(a)) {
+                System.out.print(a + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    private boolean isPrime(int a) {
+        if (a <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(a); i++) {
+            if (a % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+public class Solution {
+
+	public static void main(String[] args) {
+		try{
+		BufferedReader br=new BufferedReader(new InputStreamReader(in));
+		int n1=Integer.parseInt(br.readLine());
+		int n2=Integer.parseInt(br.readLine());
+		int n3=Integer.parseInt(br.readLine());
+		int n4=Integer.parseInt(br.readLine());
+		int n5=Integer.parseInt(br.readLine());
+		Prime ob=new Prime();
+		ob.checkPrime(n1);
+		ob.checkPrime(n1,n2);
+		ob.checkPrime(n1,n2,n3);
+		ob.checkPrime(n1,n2,n3,n4,n5);	
+		Method[] methods=Prime.class.getDeclaredMethods();
+		Set<String> set=new HashSet<>();
+		boolean overload=false;
+		for(int i=0;i<methods.length;i++)
+		{
+			if(set.contains(methods[i].getName()))
+			{
+				overload=true;
+				break;
+			}
+			set.add(methods[i].getName());
+			
+		}
+		if(overload)
+		{
+			throw new Exception("Overloading not allowed");
+		}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+	
+}
+
+
+Ejercicio 5 - Java Map
+
+//Complete this code or write your own from scratch
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh)
+    {
+        Scanner in = new Scanner(System.in);
+        int n=in.nextInt(); //number of entries in the phonebook
+        in.nextLine();
+        Map<String, Integer> phoneBook = new HashMap<>();//almacenar elementos en pares clave/valor
+        for(int i=0;i<n;i++)
+        {
+            String name=in.nextLine();
+            int phone=in.nextInt();
+            in.nextLine();
+            phoneBook.put(name, phone);
+        }
+        while (in.hasNext()) {
+            String query = in.nextLine();
+            Integer phone = phoneBook.get(query);
+            if (phone != null) {
+                System.out.println(query + "=" + phone);
+            } else {
+                System.out.println("Not found");
+            }
+        }
+        in.close();
+    }
+}

@@ -20,4 +20,8 @@ public class UsuarioServices {
 	public ArrayList<UsuarioModel> ListarUsuarios() {
 		return (ArrayList<UsuarioModel>) usuariorepositorio.findAll();
 	}
+	
+	public UsuarioModel guardarUsuario(UsuarioModel usuario) {
+		return usuariorepositorio.save(usuario);
+	}
 }
