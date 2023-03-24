@@ -14,7 +14,7 @@ public class UsuarioServices {
 	UsuarioRepositorio usuariorepositorio;
 
 	public ArrayList<UsuarioModel> busquedaPorPrioridad(Integer prioridad) {
-		return usuariorepositorio.busquedaPorPrioridad(prioridad);
+		return usuariorepositorio.findByPrioridad(prioridad);
 	}
 
 	public ArrayList<UsuarioModel> ListarUsuarios() {
