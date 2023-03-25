@@ -18,8 +18,8 @@ public class UsuarioModel {
 	private String email;
 	private Integer prioridad;
 
-	public UsuarioModel(String nombre, String email, Integer prioridad) {
-		super();
+	public UsuarioModel(long id, String nombre, String email, Integer prioridad) {
+		this.id = id;
 		this.nombre = nombre;
 		this.email = email;
 		this.prioridad = prioridad;
@@ -56,4 +56,8 @@ public class UsuarioModel {
 	public void setPrioridad(Integer prioridad) {
 		this.prioridad = prioridad;
 	}
+
+	public UsuarioModel() {
+	}
+
 }

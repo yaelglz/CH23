@@ -11,5 +11,5 @@ import com.generation.cohorte23.jpa.models.UsuarioModel;
 public interface UsuarioRepositorio extends CrudRepository<UsuarioModel, Long> {
 
 	public ArrayList<UsuarioModel> findByPrioridad(Integer prioridad);
-	
+
 }
