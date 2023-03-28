@@ -1,10 +1,13 @@
 package com.generation.cohorte23.jpa.models;
 
+import java.util.ArrayList;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,6 +20,15 @@ public class UsuarioModel {
 	private String nombre;
 	private String email;
 	private Integer prioridad;
+
+	@OneToMany(mappedBy = "usuario") // Usuario con muchos productos
+	private ArrayList<ProductoModel> productos;
+
+	@OneToMany(mappedBy = "usuario") // Usuario con muchas ordenes
+	private ArrayList<OrdenModel> ordenes;
+
+	public UsuarioModel() {
+	}
 
 	public UsuarioModel(long id, String nombre, String email, Integer prioridad) {
 		this.id = id;
@@ -57,7 +69,20 @@ public class UsuarioModel {
 		this.prioridad = prioridad;
 	}
 
-	public UsuarioModel() {
+	public ArrayList<ProductoModel> getProductos() {
+		return productos;
+	}
+
+	public void setProductos(ArrayList<ProductoModel> productos) {
+		this.productos = productos;
+	}
+
+	public ArrayList<OrdenModel> getOrdenes() {
+		return ordenes;
+	}
+
+	public void setOrdenes(ArrayList<OrdenModel> ordenes) {
+		this.ordenes = ordenes;
 	}
 
 }
