@@ -3,12 +3,23 @@ package com.generartion.ecommerce.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.generartion.ecommerce.model.Producto;
 import com.generartion.ecommerce.services.ProductoService;
+
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE,
+		RequestMethod.PUT })
 
 @RestController // Es un controllar para soportar metodos HTTP
 @RequestMapping(path = "/miOtso/productos/") /*
@@ -40,26 +51,38 @@ public class ProductoController {
 		this.productoServicio = productoServicio;
 	}
 
-	// HHTP GET
+	// HTTP GET
 	@GetMapping
 	public List<Producto> getProducto() {
 		return productoServicio.leerProductos();
 	}
 
-	/*
-	 * // HTTP POST
-	 * 
-	 * @PostMapping public postProducto() { return productoServicio.crearProducto();
-	 * }
-	 * 
-	 * // HTPP PUT
-	 * 
-	 * @PutMapping public putProducto() { return
-	 * productoServicio.actualizarProducto(); }
-	 * 
-	 * // HTTP DELETE
-	 * 
-	 * @DeleteMapping public deleteProducto() { return
-	 * productoServicio.borrarProducto(); }
-	 */
+	// HTTP GET para un producto
+	@GetMapping(path = "{prodId}")
+	public Producto getProducto(@PathVariable("prodId") Long prodId) {
+		return productoServicio.leerProducto(prodId);
+	}
+
+	// HTTP POST
+	@PostMapping
+	public void postProducto(@RequestBody Producto prod) { // No agrego un producto, agrego UN CUERPO a ese producto
+		productoServicio.crearProducto(prod); // Disparo la operacion CRUD para modificar mi BD
+	}
+
+	// HTTP PUT
+	@PutMapping(path = "{prodId}")
+	public void updateProducto(@PathVariable("prodId") Long prodId, 
+			@RequestParam(required = false) String nombre,
+			@RequestParam(required = false) String descripcion, 
+			@RequestParam(required = false) double precio,
+			@RequestParam(required = false) String url_Imagen) {
+				productoServicio.actualizarProducto(prodId, nombre, descripcion, url_Imagen, precio);
+			}// updateProducto
+
+	// HTTP DELETE
+	@DeleteMapping(path = "{prodId}") // Borrare elementos por ID (miOtso/productos/Id)
+	public void deleteProducto(@PathVariable("prodId") Long prodId) {
+		productoServicio.borrarProducto(prodId);
+	}
+
 }
