@@ -60,7 +60,7 @@ public class ProductoService {
 				productoABuscar.setNombre(nombre);
 			if (descripcion != null)
 				productoABuscar.setDescripcion(descripcion);
-			if (precio != null)
+			if (precio != 0)
 				productoABuscar.setPrecio(precio);
 			if (uRL_Imagen != null)
 				productoABuscar.setuRL_Imagen(uRL_Imagen);
